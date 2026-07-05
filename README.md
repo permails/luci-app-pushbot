@@ -1,3 +1,5 @@
+[English](README_EN.md)
+
 # luci-app-pushbot 
 
 「全能推送」(PushBot) 是一款专为 OpenWrt 设计的路由器状态推送插件。它可以将路由器的 IP 变动、设备上下线、CPU 负载、设备温度等信息实时推送到您的各种终端设备上。
