@@ -27,10 +27,10 @@ a.rmempty = true
 
 --精简模式
 a = s:taboption("basic", MultiValue, "lite_enable", translate("精简模式"))
-a:value("device", translate("精简当前设备列表"))
-a:value("nowtime", translate("精简当前时间"))
+a:value("device", translate("精简当前设备列表") .. "　")
+a:value("nowtime", translate("精简当前时间") .. "　")
 a:value("content", translate("只推送标题"))
-a.widget = "select"
+a.widget = "checkbox"
 a.default = nil
 a.optional = true
 
