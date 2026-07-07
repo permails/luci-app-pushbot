@@ -45,14 +45,22 @@ a.optional = true
 a=s:taboption("basic", ListValue,"jsonpath",translate("Push Mode"))
 a.default="/usr/bin/pushbot/api/dingding.json"
 a.rmempty = true
+a:value("/usr/bin/pushbot/api/telegram.json",translate("Telegram Bot"))
 a:value("/usr/bin/pushbot/api/dingding.json",translate("DingTalk"))
 a:value("/usr/bin/pushbot/api/ent_wechat.json",translate("WeCom"))
 a:value("/usr/bin/pushbot/api/feishu.json",translate("Feishu"))
 a:value("/usr/bin/pushbot/api/bark.json",translate("Bark"))
 a:value("/usr/bin/pushbot/api/pushplus.json",translate("PushPlus"))
 a:value("/usr/bin/pushbot/api/pushdeer.json",translate("PushDeer"))
-a:value("/usr/bin/pushbot/api/telegram.json",translate("Telegram Bot"))
 a:value("/usr/bin/pushbot/api/diy.json",translate("Custom Push"))
+
+a=s:taboption("basic", Value,"tg_token",translate('Telegram Bot Token'), translate("Telegram Bot Token<br>Created via @BotFather<br><br>"))
+a.rmempty = true
+a:depends("jsonpath","/usr/bin/pushbot/api/telegram.json")
+
+a=s:taboption("basic", Value,"tg_chatid",translate('Telegram Chat ID'), translate("Telegram Chat ID<br>Can be user id or group id<br><br>"))
+a.rmempty = true
+a:depends("jsonpath","/usr/bin/pushbot/api/telegram.json")
 
 a=s:taboption("basic", Value,"dd_webhook",translate('Webhook'), translate("DingTalk Bot Webhook, enter only the part after access_token=<br>Click here to get the call code<br><br>"))
 a.rmempty = true
@@ -102,14 +110,6 @@ a:depends("jsonpath","/usr/bin/pushbot/api/pushdeer.json")
 a=s:taboption("basic", Value,"pushdeer_srv",translate('PushDeer Server'), translate("PushDeer Self-hosted Server Address<br>e.g. https://your.domain:port<br>See here for self-hosted setup<br><br>"))
 a.rmempty = true
 a:depends("pushdeer_srv_enable","1")
-
-a=s:taboption("basic", Value,"tg_token",translate('Telegram Bot Token'), translate("Telegram Bot Token<br>Created via @BotFather<br><br>"))
-a.rmempty = true
-a:depends("jsonpath","/usr/bin/pushbot/api/telegram.json")
-
-a=s:taboption("basic", Value,"tg_chatid",translate('Telegram Chat ID'), translate("Telegram Chat ID<br>Can be user id or group id<br><br>"))
-a.rmempty = true
-a:depends("jsonpath","/usr/bin/pushbot/api/telegram.json")
 
 a=s:taboption("basic", Value,"fs_webhook",translate('WebHook'), translate("Feishu WebHook<br>Click here to get the call code<br><br>"))
 a.rmempty = true
