@@ -23,7 +23,13 @@ function read_config(){
 	"jsonpath" "api_url" "dd_webhook" "we_webhook" "pp_token" "pp_channel" "pp_webhook" "pp_topic_enable" "pp_topic" "fs_webhook" "pushdeer_key" "pushdeer_srv_enable" "pushdeer_srv" "bark_srv_enable" "bark_srv" "bark_token" "bark_sound" "bark_icon" "bark_icon_enable" "bark_level"
 	
 	for str_version in "wrtbwmon" "iputils-arping" "curl" "iw"; do
-		eval `echo ${str_version:0:2}"_version"`=`opkg list-installed|grep -w ^${str_version}|awk '{print $3}'` 2>/dev/null
+		local ver=$(opkg list-installed 2>/dev/null | grep -w "^${str_version}" | awk '{print $3}')
+		if [ -z "$ver" ]; then
+			local bin_name="$str_version"
+			[ "$str_version" = "iputils-arping" ] && bin_name="arping"
+			command -v "$bin_name" >/dev/null 2>&1 && ver="installed"
+		fi
+		eval `echo ${str_version:0:2}"_version"`=\"$ver\"
 	done
 	dir="/tmp/pushbot/" && mkdir -p ${dir}
 	tempjsonpath="/tmp/pushbot/temp.json"
