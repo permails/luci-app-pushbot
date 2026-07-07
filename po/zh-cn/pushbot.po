@@ -1,0 +1,615 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: luci-app-pushbot\n"
+"POT-Creation-Date: 2026-07-05 00:00+0800\n"
+"PO-Revision-Date: 2026-07-05 00:00+0800\n"
+"Last-Translator: Antigravity AI\n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Device Temperature"
+msgstr "设备温度"
+
+msgid "DND List for Any Offline"
+msgstr "任意离线免打扰列表"
+
+msgid "<br/>May fail due to server stability or frequent connections.<br/>Not recommended if IP can be obtained via interface.<br/>Access randomly from the above list."
+msgstr "<br/>会因服务器稳定性、连接频繁等原因导致获取失败<br/>如接口可以正常获取 IP，不推荐使用<br/>从以上列表中随机地址访问"
+
+msgid "Scheduled Push"
+msgstr "定时推送"
+
+msgid "If no secondary router and good signal, reduce the above values.<br/>Adjust if frequent disconnects occur due to WiFi sleep.<br/>..╮(╯_╰）╭.."
+msgstr "若无二级路由设备，信号强度良好，可以减少以上数值<br/>因夜间 wifi 休眠较为玄学，遇到设备频繁推送断开，烦请自行调整参数<br/>..╮(╯_╰）╭.."
+
+msgid "Lite Mode"
+msgstr "精简模式"
+
+msgid "sms: SMS"
+msgstr "sms：短信"
+
+msgid "IPv4 API List"
+msgstr "IPv4 API列表"
+
+msgid "GitHub Project URL"
+msgstr "github 项目地址"
+
+msgid "Test Temperature Command"
+msgstr "测试温度命令"
+
+msgid "Push Alert After Exceeding Limit"
+msgstr "超过次数后推送提醒"
+
+msgid "DND Start Time"
+msgstr "免打扰开始时间"
+
+msgid "PushDeer Key"
+msgstr "PushDeer Key"
+
+msgid "Web Login Alert"
+msgstr "Web 登录提醒"
+
+msgid "Client List"
+msgstr "客户端列表"
+
+msgid "Lite Current Device List"
+msgstr "精简当前设备列表"
+
+msgid "Bark Notification Icon"
+msgstr " Bark 通知图标"
+
+msgid "DingTalk"
+msgstr "钉钉"
+
+msgid "<br/>Special characters may cause sending failure"
+msgstr "<br/>使用特殊符号可能会造成发送失败"
+
+msgid "Lite Current Time"
+msgstr "精简当前时间"
+
+msgid "DND after all listed devices are offline"
+msgstr "列表内设备都离线后免打扰"
+
+msgid "Notify only this interface's devices"
+msgstr "仅通知此接口设备"
+
+msgid "Detection Interval"
+msgstr "检测时间间隔"
+
+msgid "MAC Filter 2"
+msgstr "MAC过滤2"
+
+msgid "Device Offline Timeout (s)"
+msgstr "设备离线检测超时（s）"
+
+msgid "IPv6 Change Notification"
+msgstr "IPv6 变更通知"
+
+msgid "Get via URL"
+msgstr "通过URL获取"
+
+msgid "Third-party webhook: WeCom, DingTalk, Feishu, ServerChan<br>SMS/Email: PushPlus not yet open<br>Channel settings: <a href='http://pushplus.plus/doc/extend/webhook.html' target='_blank'>Click Here</a>"
+msgstr "第三方webhook：企业微信、钉钉、飞书、server酱<br>sms短信/mail邮箱：PushPlus暂未开放<br>具体channel设定参见：<a href='http://pushplus.plus/doc/extend/webhook.html' target='_blank'>点击这里</a>"
+
+msgid "Pause pushes during specified hours.<br/>Scheduled pushes are also blocked during DND."
+msgstr "在指定整点时间段内，暂停推送消息<br/>免打扰时间中，定时推送也会被阻止。"
+
+msgid "Ignore whitelist login alerts and block actions. Mask notation not supported."
+msgstr "忽略白名单登陆提醒和拉黑操作，暂不支持掩码位表示"
+
+msgid "Bark Sound"
+msgstr "Bark Sound"
+
+msgid "Bark Level"
+msgstr "Bark Level"
+
+msgid "wechat: PushPlus WeChat Official Account"
+msgstr "wechat：PushPlus微信公众号"
+
+msgid "Online DND List"
+msgstr "在线免打扰列表"
+
+msgid "Device Online Timeout (s)"
+msgstr "设备上线检测超时（s）"
+
+msgid "PushDeer"
+msgstr "PushDeer"
+
+msgid "mail: Email"
+msgstr "mail：邮箱"
+
+msgid "Ensure device can read temperature. Change command in Advanced Settings."
+msgstr "请确认设备可以获取温度，如需修改命令，请移步高级设置"
+
+msgid "Self-hosted PushDeer Server"
+msgstr "自建 PushDeer 服务器"
+
+msgid "IP Whitelist"
+msgstr "白名单 IP 列表"
+
+msgid "Bark Server"
+msgstr "Bark Server"
+
+msgid "Enable"
+msgstr "启用"
+
+msgid "CPU Load Alert"
+msgstr "CPU 负载报警"
+
+msgid "Ignore List"
+msgstr "忽略列表"
+
+msgid "PushPlus Custom Webhook"
+msgstr "PushPlus Custom Webhook"
+
+msgid "Ensure key login is set, else scripts will fail!<br/>Google how to install sensors on PVE.<br/>Key login example:<br/>opkg update<br/>opkg install openssh-client openssh-keygen<br/>ssh-keygen -t rsa<br/>ssh root@10.0.0.2 \"tee -a ~/.ssh/id_rsa.pub\" < ~/.ssh/id_rsa.pub<br/>ssh root@10.0.0.2 \"cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys\"<br/>ssh -i ~/.ssh/id_rsa root@10.0.0.2 sensors"
+msgstr "请确认已经设置好密钥登陆，否则会引起脚本无法运行等错误！<br/>PVE 安装 sensors 命令自行百度<br/>密钥登陆例：<br/>opkg update #更新列表<br/>opkg install openssh-client openssh-keygen #安装openssh客户端<br/>ssh-keygen -t rsa # 生成密钥文件（自行设定密码等信息）<br/>ssh root@10.0.0.2 \\"tee -a ~/.ssh/id_rsa.pub\\" < ~/.ssh/id_rsa.pub # 传送公钥到 PVE<br/>ssh root@10.0.0.2 \\"cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys\\" # 写入公钥到 PVE<br/>ssh -i ~/.ssh/id_rsa root@10.0.0.2 sensors # 测试温度命令"
+
+msgid "Scheduled Sending"
+msgstr "定时发送"
+
+msgid "Scheduled Reboot"
+msgstr "定时重启"
+
+msgid "Avoid daytime DDNS redials. Does not affect disconnect detection.<br/>May be unstable due to nighttime traffic."
+msgstr "避免白天重拨 ddns 域名等待解析，此功能不影响断网检测<br/>因夜间跑流量问题，该功能可能不稳定"
+
+msgid "webhook: Third-party Webhook"
+msgstr "webhook：第三方webhook"
+
+msgid "Default is 22. Enter custom SSH port if any."
+msgstr "默认为22，如有自定义，请填写自定义SSH端口"
+
+msgid "Unit is hours"
+msgstr "单位为小时"
+
+msgid "IP Blacklist"
+msgstr "IP 黑名单列表"
+
+msgid "Device Online Notification"
+msgstr "设备上线通知"
+
+msgid "Disable"
+msgstr "disable"
+
+msgid "Feishu WebHook"
+msgstr "飞书 WebHook"
+
+msgid "Webhook"
+msgstr "Webhook"
+
+msgid "Mode 1 stops all detection, including unattended tasks."
+msgstr "模式一停止一切检测，包括无人值守。"
+
+msgid "Global Internet Detection Timeout"
+msgstr "全球互联检测超时时间"
+
+msgid "Redial to get Public IP"
+msgstr "重拨尝试获取公网 ip"
+
+msgid "PushPlus Custom Webhook"
+msgstr "PushPlus 自定义Webhook"
+
+msgid "DND End Time"
+msgstr "免打扰结束时间"
+
+msgid "MAC Device Info Database"
+msgstr "MAC设备信息数据库"
+
+msgid "Push Content"
+msgstr "推送内容"
+
+msgid "Redial"
+msgstr "重新拨号"
+
+msgid "PushDeer Server"
+msgstr "PushDeer Server"
+
+msgid "Reset traffic data daily at midnight"
+msgstr "每天零点重置流量数据"
+
+msgid "Reboot Router"
+msgstr "重启路由器"
+
+msgid "Every day at \"..t..\" o'clock"
+msgstr "每天\"..t..\"点"
+
+msgid "PushPlus"
+msgstr "PushPlus"
+
+msgid "Custom Push"
+msgstr "自定义推送"
+
+msgid "Simplified Version"
+msgstr "简化版"
+
+msgid "Abnormal Traffic Watchlist"
+msgstr "异常流量关注列表"
+
+msgid "Send Manually"
+msgstr "手动发送"
+
+msgid "Requires 4.36M raw data. Full ~1.2M, Lite ~250kb.<br/>Do not use network query without proxy."
+msgstr "需下载 4.36m 原始数据，处理后完整版约 1.2M，简化版约 250kb <br/>若无梯子，请勿使用网络查询"
+
+msgid "<br/>Device alerts pushed only after 5 mins continuous exceedance.<br/>Max once per hour."
+msgstr "<br/>设备报警只会在连续五分钟超过设定值时才会推送<br/>而且一个小时内不会再提醒第二次"
+
+msgid "Do not modify if you don't understand these options."
+msgstr "如果你不了解这些选项的含义，请不要修改这些选项。"
+
+msgid "Device Offline Notification"
+msgstr "设备下线通知"
+
+msgid "Feishu"
+msgstr "飞书"
+
+msgid "Format: AA:AA:AA:AA:AA:AA|BB:BB... Treats multiple MACs as one user.<br/>Pushes only when all devices are offline to avoid dual-wifi spam."
+msgstr "AA:AA:AA:AA:AA:AA\\|BB:BB:BB:BB:BB:B 可以将多个 MAC 视为同一用户<br/>任一设备在线后不再推送，设备全部离线时才会推送，避免双 wifi 频繁推送"
+
+msgid "Get via Interface"
+msgstr "通过接口获取"
+
+msgid "Web Error Attempt Alert"
+msgstr "Web 错误尝试提醒"
+
+msgid "Max Concurrent Threads"
+msgstr "最大并发进程数"
+
+msgid "Self-hosted Bark Server"
+msgstr "自建 Bark 服务器"
+
+msgid "PushPlus Channel"
+msgstr "PushPlus Channel"
+
+msgid "Bark Time-Sensitive Notification"
+msgstr "Bark 时效性通知"
+
+msgid "Device Name"
+msgstr "本设备名称"
+
+msgid "Count won't reset until reboot. Please add whitelist first."
+msgstr "直到重启前都不会重置次数，请先添加白名单"
+
+msgid "Modify settings to auto-repair network"
+msgstr "修改相关设置项，尝试自动修复网络"
+
+msgid "Basic Settings"
+msgstr "基本设置"
+
+msgid "Default"
+msgstr "默认"
+
+msgid "Auto Block"
+msgstr "自动拉黑"
+
+msgid "Shorter times give faster responses but use more resources."
+msgstr "越短的时间时间响应越及时，但会占用更多的系统资源"
+
+msgid "Full Version"
+msgstr "完整版"
+
+msgid "Device Abnormal Traffic Alert (bytes), can append K or M"
+msgstr "设备异常流量警报（byte），你可以追加 K 或者 M"
+
+msgid "Send Test"
+msgstr "发送测试"
+
+msgid "PVE Virtual Machine"
+msgstr "PVE 虚拟机"
+
+msgid "Options 1 and 2 won't modify settings, max 2 attempts.<br/>Option 3 backs up to /usr/bin/pushbot/configbak and restores on failure.<br/>[!! COMPATIBILITY NOT GUARANTEED !!] Do not use if unfamiliar."
+msgstr "选项 1 选项 2 不会修改设置，并最多尝试 2 次。<br/>选项 3 会将设置项备份于 /usr/bin/pushbot/configbak 目录，并在失败后还原。<br/>【！！无法保证兼容性！！】不熟悉系统设置项，不会救砖请勿使用"
+
+msgid "Device Abnormal Traffic"
+msgstr "设备异常流量"
+
+msgid "PushPlus Topic"
+msgstr "PushPlus Topic"
+
+msgid "<br/>Sends every * hours starting from 00:00"
+msgstr "<br/>从 00:00 开始，每 * 小时发送一次"
+
+msgid "WebHook"
+msgstr "WebHook"
+
+msgid "<br/>Generally select wan. Choose manually for multi-wan."
+msgstr "<br/>一般选择 wan 接口，多拨环境请自行选择"
+
+msgid "Redial only during DND"
+msgstr "仅在免打扰时段重拨"
+
+msgid "Disable"
+msgstr "关闭"
+
+msgid "Enable Logging"
+msgstr "开启日志"
+
+msgid "PushPlus Token"
+msgstr "PushPlus Token"
+
+msgid "Push Title"
+msgstr "推送标题"
+
+msgid "WeCom Bot Webhook"
+msgstr "企业微信机器人 Webhook"
+
+msgid "System Status"
+msgstr "系统运行情况"
+
+msgid "Offline Detection Count"
+msgstr "离线检测次数"
+
+msgid "Send Interval"
+msgstr "发送间隔"
+
+msgid "Interval Sending"
+msgstr "间隔发送"
+
+msgid "When Network Disconnected"
+msgstr "网络断开时"
+
+msgid "Bark Token"
+msgstr "Bark Token"
+
+msgid "Device Alias"
+msgstr "设备别名"
+
+msgid "Cron Settings"
+msgstr "定时任务设定"
+
+msgid "SSH Login Alert"
+msgstr "SSH 登录提醒"
+
+msgid "Push Mode"
+msgstr "推送模式"
+
+msgid "Bark Self-hosted Server Address"
+msgstr "Bark 自建服务器地址"
+
+msgid "DND Time Settings"
+msgstr "免打扰时段设置"
+
+msgid "SSH Error Attempt Alert"
+msgstr "SSH 错误尝试提醒"
+
+msgid "Mode 2: Silent Mode"
+msgstr "模式二：静默模式"
+
+msgid "IPv4 Change Notification"
+msgstr "IPv4 变更通知"
+
+msgid "Send"
+msgstr "发送"
+
+msgid "SSH Port"
+msgstr "SSH端口"
+
+msgid "Download to RAM"
+msgstr "下载到内存"
+
+msgid "Ignore Listed Devices"
+msgstr "忽略列表内设备"
+
+msgid "Ensure script runs properly to avoid frequent reboots!"
+msgstr "请确认脚本可以正常运行，否则可能造成频繁重启等错误！"
+
+msgid "cp: WeCom App"
+msgstr "cp：企业微信应用"
+
+msgid "Output Info"
+msgstr "输出信息"
+
+msgid "Host Address"
+msgstr "宿主机地址"
+
+msgid "CPU Temperature Alert"
+msgstr "CPU 温度报警"
+
+msgid "Watchlist"
+msgstr "关注列表"
+
+msgid "PushBot pushes alerts and logs to various platforms.<br>Supports DingTalk, WeCom, PushPlus."
+msgstr "PushBot可将路由器的报警和日志推送到各种平台。<br>支持钉钉、企业微信、PushPlus 等等。"
+
+msgid "0 is permanent block. Use with caution.<br>If locked out, change your IP to enter LUCI and clear rules."
+msgstr "0 为永久拉黑，慎用<br>如不幸误操作，请更改设备 IP 进入 LUCI 界面清空规则"
+
+msgid "WAN Info"
+msgstr "WAN信息"
+
+msgid "DND when any listed device is online"
+msgstr "列表内任意设备在线时免打扰"
+
+msgid "<br/>Enter MAC and alias separated by '-', e.g.:<br/>XX:XX:XX:XX:XX:XX-MyPhone"
+msgstr "<br/> 请输入设备 MAC 和设备别名，用“-”隔开，如：<br/> XX:XX:XX:XX:XX:XX-我的手机"
+
+msgid "Unattended Tasks"
+msgstr "无人值守任务"
+
+msgid "Notify only listed devices"
+msgstr "仅通知列表内设备"
+
+msgid "Downloads to RAM, re-downloads on reboot.<br/>Download to flash if no proxy."
+msgstr "懒得做自动更新了，下载到内存中，重启会重新下载 <br/>若无梯子，还是下到机身吧"
+
+msgid "Bark Notification Icon"
+msgstr "Bark 通知图标"
+
+msgid "Push Title Only"
+msgstr "只推送标题"
+
+msgid "No Action"
+msgstr "无操作"
+
+msgid "PushDeer Self-hosted Server Address"
+msgstr "PushDeer 自建服务器地址"
+
+msgid "Abnormal Traffic DND"
+msgstr "异常流量免打扰"
+
+msgid "DingTalk Bot Webhook"
+msgstr "钉钉机器人 Webhook"
+
+msgid "Enter Device MAC"
+msgstr "请输入设备 MAC"
+
+msgid "Executes only when all listed devices are offline.<br/>After 1 hour of DND, watched devices with low traffic (~100kb/m) for 5 mins are considered offline."
+msgstr "只会在列表中设备都不在线时才会执行<br/>免打扰时段一小时后，关注设备五分钟低流量（约100kb/m）将视为离线"
+
+msgid "Bark Notification Sound"
+msgstr "Bark 通知声音"
+
+msgid "Bark"
+msgstr "Bark"
+
+msgid "Avoid special symbols like \", $, !. Result must be a number for temp comparison."
+msgstr "请尽量避免使用特殊符号，如双引号、$、!等，执行结果需为数字，用于温度对比"
+
+msgid "MAC Filter"
+msgstr "MAC过滤"
+
+msgid "PushBot"
+msgstr "全能推送"
+
+msgid "Hint"
+msgstr "提示"
+
+msgid "IPv6 API List"
+msgstr "IPv6 API列表"
+
+msgid "Bark Icon"
+msgstr "Bark Icon"
+
+msgid "PushPlus One-to-Many Push"
+msgstr "PushPlus 一对多推送"
+
+msgid "Too short time may cause inaccurate detection"
+msgstr "过短的时间可能导致检测不准确"
+
+msgid "Network Query"
+msgstr "网络查询"
+
+msgid "Do Not Disturb (DND)"
+msgstr "免打扰"
+
+msgid "WeCom"
+msgstr "企业微信"
+
+msgid "Mode 1: Script Suspended"
+msgstr "模式一：脚本挂起"
+
+msgid "Interface Name"
+msgstr "接口名称"
+
+msgid "PushPlus Group Code"
+msgstr "PushPlus 群组编码"
+
+msgid "Send Time"
+msgstr "发送时间"
+
+msgid "Device name added to push title to identify source."
+msgstr "在推送信息标题中会标识本设备名称，用于区分推送信息的来源设备"
+
+msgid "Redial skips IP change notification and delays DDNS update.<br/>Ensure redial gets a public IP, otherwise it just causes drops.<br/>Don't bother if you're on a carrier-grade NAT!"
+msgstr "重拨时不会推送 ip 变动通知，并会导致你的域名无法及时更新 ip 地址<br/>请确认你可以通过重拨获取公网 ip，否则这不仅徒劳无功还会引起频繁断网<br/>移动等大内网你就别挣扎了！！"
+
+
+
+msgid "Settings"
+msgstr "配置"
+
+msgid "Advanced Settings"
+msgstr "高级设置"
+
+msgid "Online Devices"
+msgstr "在线设备"
+
+msgid "Log"
+msgstr "日志"
+
+
+msgid "Auto Refresh"
+msgstr "自动刷新"
+
+msgid "Clear Log"
+msgstr "清除日志"
+
+
+msgid "DingTalk Bot Webhook, enter only the part after access_token=<br>Click here to get the call code<br><br>"
+msgstr "钉钉机器人 Webhook，只输入access_token=后面的即可<br>调用代码获取<a href='https://developers.dingtalk.com/document/robots/custom-robot-access' target='_blank'>点击这里</a><br><br>"
+
+msgid "WeCom Bot Webhook, enter only the part after key=<br>Click here to get the call code<br><br>"
+msgstr "企业微信机器人 Webhook，只输入key=后面的即可<br>调用代码获取<a href='https://work.weixin.qq.com/api/doc/90000/90136/91770' target='_blank'>点击这里</a><br><br>"
+
+msgid "PushPlus Token<br>Click here to get the call code<br><br>"
+msgstr "PushPlus Token<br>调用代码获取<a href='http://pushplus.plus/doc/' target='_blank'>点击这里</a><br><br>"
+
+msgid "PushPlus Custom Webhook<br>For third-party or WeCom calls<br>See here for Custom Webhook setup<br><br>"
+msgstr "PushPlus自定义Webhook<br>第三方webhook或企业微信调用<br>具体自定义Webhook设定参见：<a href='http://pushplus.plus/doc/extend/webhook.html' target='_blank'>点击这里</a><br><br>"
+
+msgid "PushPlus Group Code<br>Group code for one-to-many push<br>See here for Topic setup<br><br>"
+msgstr "PushPlus群组编码<br>一对多推送时指定的群组编码<br>具体群组编码Topic设定参见：<a href='http://www.pushplus.plus/push2.html' target='_blank'>点击这里</a><br><br>"
+
+msgid "PushDeer Key<br>Click here to get the call code<br><br>"
+msgstr "PushDeer Key<br>调用代码获取<a href='http://www.pushdeer.com/' target='_blank'>点击这里</a><br><br>"
+
+msgid "PushDeer Self-hosted Server Address<br>e.g. https://your.domain:port<br>See here for self-hosted setup<br><br>"
+msgstr "PushDeer自建服务器地址<br>如https://your.domain:port<br>具体自建服务器设定参见：<a href='http://www.pushdeer.com/selfhosted.html' target='_blank'>点击这里</a><br><br>"
+
+msgid "Feishu WebHook<br>Click here to get the call code<br><br>"
+msgstr "飞书机器人 WebHook<br>调用代码获取<a href='https://www.feishu.cn/hc/zh-CN/articles/360024984973' target='_blank'>点击这里</a><br><br>"
+
+msgid "Bark Token<br>Click here to get the call code<br><br>"
+msgstr "Bark Token<br>调用代码获取<a href='https://github.com/Finb/Bark' target='_blank'>点击这里</a><br><br>"
+
+msgid "Bark Self-hosted Server Address<br>e.g. https://your.domain:port<br>See here for self-hosted setup<br><br>"
+msgstr "Bark自建服务器地址<br>如https://your.domain:port<br>具体自建服务器设定参见：<a href='https://github.com/Finb/Bark' target='_blank'>点击这里</a><br><br>"
+
+msgid "Bark Notification Sound<br>e.g. silence.caf<br>See here for setup<br><br>"
+msgstr "Bark通知声音<br>如silence.caf<br>具体设定参见：<a href='https://github.com/Finb/Bark/tree/master/Sounds' target='_blank'>点击这里</a><br><br>"
+
+msgid "Bark Notification Icon (iOS15+ only)<br>e.g. http://day.app/assets/images/avatar.jpg<br>See here for setup<br><br>"
+msgstr "Bark通知图标(仅 iOS15 或以上支持)<br>如http://day.app/assets/images/avatar.jpg<br>具体设定参见：<a href='https://github.com/Finb/Bark#%E5%85%B6%E4%BB%96%E5%8F%82%E6%95%B0' target='_blank'>点击这里</a><br><br>"
+
+msgid "Bark Time-Sensitive Notification<br>active: Default, screen lights up immediately.<br/>timeSensitive: Shows even in Focus mode.<br/>passive: Adds to list quietly without lighting up."
+msgstr "Bark通知时效性级别<br>可选参数值：<br/>active：不设置时的默认值，系统会立即亮屏显示通知。<br/>timeSensitive：时效性通知，可在专注状态下显示通知。<br/>passive：仅将通知添加到通知列表，不会亮屏提醒。"
+
+msgid "CPU Load Alarm Threshold"
+msgstr "负载报警阈值"
+
+msgid "Temperature Alarm Threshold"
+msgstr "温度报警阈值"
+
+msgid "Bandwidth Limit Per Minute"
+msgstr "每分钟流量限制"
+
+msgid "Max Failed Login Attempts"
+msgstr "错误尝试次数"
+
+msgid "Blacklist Duration (s)"
+msgstr "拉黑时间(秒)"
+
+msgid "Disable"
+msgstr "关闭"
+
+msgid " Hours"
+msgstr "小时"
+
+msgid "OpenWrt Router Status:"
+msgstr "OpenWrt 路由状态："
+
+msgid "Custom Temperature Command"
+msgstr "自定义温度读取命令"
+
+msgid "System Uptime Greater Than"
+msgstr "系统运行时间大于"
+
+msgid "Network Uptime Greater Than"
+msgstr "网络在线时间大于"
+
+msgid "Max Daily Retries"
+msgstr "当天最大重试次数"

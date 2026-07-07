@@ -1114,9 +1114,9 @@ function send(){
 	pushbot_disturb;local send_disturb=$?
 	get_config "send_title" "router_status" "router_temp" "router_wan" "client_list" "google_check_timeout"
 
-	[ -z "$send_title" ] && local send_title="路由状态："
+	[ -z "$send_title" ] && local send_title="${MSG_ROUTER_STATUS}"
 	[ -z "$google_check_timeout" ] && local google_check_timeout="10"
-	[ ! -z "$1" ] && local send_title="发送测试：" && local send_content="${str_splitline}${str_title_start}内容1${str_title_end}${str_linefeed}${str_tab}设备1${str_linefeed}${str_tab}设备2${str_splitline}${str_title_start}内容2${str_title_end}${str_linefeed}${str_tab}设备3${str_linefeed}${str_tab}设备4"
+	[ ! -z "$1" ] && local send_title="${MSG_SEND_TEST}" && local send_content="${str_splitline}${str_title_start}${MSG_CONTENT_1}${str_title_end}${str_linefeed}${str_tab}${MSG_DEVICE_1}${str_linefeed}${str_tab}${MSG_DEVICE_2}${str_splitline}${str_title_start}${MSG_CONTENT_2}${str_title_end}${str_linefeed}${str_tab}${MSG_DEVICE_3}${str_linefeed}${str_tab}${MSG_DEVICE_4}"
 	[ -z "$1" ] && [ ! -z "$client_list" ] && [ "$client_list" -eq "1" ] && > ${dir}send_enable.lock && pushbot_first &
 
 	if [ -z "$1" ] && [ ! -z "$router_status" ] && [ "$router_status" -eq "1" ]; then
@@ -1125,11 +1125,11 @@ function send(){
 		local ramload=`free -m|sed -n '2p'|awk '{printf "%.2f%%\n",($3/$2)*100}'`
 		local Qwai=`curl -o /dev/null --connect-timeout ${google_check_timeout} -s -w %{http_code} www.google.com`
 		if [[ "$Qwai" -eq "200" ]] || [[ "$Qwai" -eq "301" ]] || [[ "$Qwai" -eq "302" ]]; then
-			local Qwai_status="已连通！"
+			local Qwai_status="${MSG_CONNECTED_EXC}"
 		else
-			local Qwai_status="已断开！"
+			local Qwai_status="${MSG_DISCONNECTED_EXC}"
 		fi
-		local systemstatustime=`cat /proc/uptime|awk -F. '{run_days=$1 / 86400;run_hour=($1 % 86400)/3600;run_minute=($1 % 3600)/60;run_second=$1 % 60;printf("运行${MSG_TIME}: %d天%d时%d分%d秒",run_days,run_hour,run_minute,run_second)}'`;unset run_days run_hour run_minute run_second
+		local systemstatustime=`cat /proc/uptime|awk -F. -v fmt="${MSG_UPTIME_FMT}" '{run_days=$1 / 86400;run_hour=($1 % 86400)/3600;run_minute=($1 % 3600)/60;run_second=$1 % 60;printf(fmt,run_days,run_hour,run_minute,run_second)}'`;unset run_days run_hour run_minute run_second
 		local send_content="${send_content}${str_splitline}${str_title_start}${font_blue} ${MSG_SYS_STATUS}${font_end}${str_title_end}"
 		local send_content="${send_content}${str_linefeed}${str_tab}${MSG_AVG_LOAD}: ${systemload}"
 		local send_content="${send_content}${str_linefeed}${str_tab}${MSG_CPU_LOAD}: ${cpuload}${percentsym}"
@@ -1153,9 +1153,9 @@ function send(){
 			local send_content="${send_content}${str_linefeed}${str_tab}ipv6 :${send_wanIPv6}"
 			local send_content="${send_content}${str_linefeed}${str_tab}${MSG_PUB_IPV6}:${send_hostIPv6}"
 		fi
-		( ! echo "$send_wanIP"|grep -q -w ${send_hostIP} ) && local send_content="${send_content}${str_linefeed}${str_tab}外网 ip 与接口 ip 不一致，你的 ip 不是公网 ip"
+		( ! echo "$send_wanIP"|grep -q -w ${send_hostIP} ) && local send_content="${send_content}${str_linefeed}${str_tab}${MSG_IP_MISMATCH}"
 		local interfaceuptime=`getinterfaceuptime`
-		[ ! -z "$interfaceuptime" ] && local wanstatustime=`getinterfaceuptime|awk -F. '{run_days=$1 / 86400;run_hour=($1 % 86400)/3600;run_minute=($1 % 3600)/60;run_second=$1 % 60;printf("${MSG_ONLINE_TIME}: %d天%d时%d分%d秒",run_days,run_hour,run_minute,run_second)}'` && unset run_days run_hour run_minute run_second
+		[ ! -z "$interfaceuptime" ] && local wanstatustime=`getinterfaceuptime|awk -F. -v fmt="${MSG_ONLINE_TIME}: %d${MSG_DAY}%d${MSG_HOUR}%d${MSG_MINUTE}%d${MSG_SECOND}" '{run_days=$1 / 86400;run_hour=($1 % 86400)/3600;run_minute=($1 % 3600)/60;run_second=$1 % 60;printf(fmt,run_days,run_hour,run_minute,run_second)}'` && unset run_days run_hour run_minute run_second
 		local send_content="${send_content}${str_linefeed}${str_tab}${wanstatustime}"
 	fi
 
@@ -1178,7 +1178,7 @@ function send(){
 	fi
 
 	[ ! -z "$device_name" ] && local send_title="【$device_name】${send_title}"
-	[ -z "$send_content" ] && local send_content="${str_splitline}${str_title_start} 我遇到了一个难题${str_title_end}${str_linefeed}${str_tab}定时发送选项错误，你没有选择需要发送的项目，该怎么办呢${str_splitline}"
+	[ -z "$send_content" ] && local send_content="${str_splitline}${str_title_start} ${MSG_CRON_ERROR_TITLE}${str_title_end}${str_linefeed}${str_tab}${MSG_CRON_ERROR_EMPTY}${str_splitline}"
 	[ "$send_disturb" -eq "0" ] && diy_send "${send_title}" "${send_content}" "${jsonpath}" >/dev/null 2>&1
 	[ $? -eq 1 ] && echo "`date "+%Y-%m-%d %H:%M:%S"` 【！！！】定时推送失败，请检查网络或设置信息" >> ${logfile} || echo "`date "+%Y-%m-%d %H:%M:%S"` ${disturb_text}定时推送任务完成" >> ${logfile}
 	deltemp
